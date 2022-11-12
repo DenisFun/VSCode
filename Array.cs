@@ -50,6 +50,6 @@ class Arrays
 
 	static void Third_Method(int[] array, int k)
 	{
-
+			//третий метод
 	}
 }
