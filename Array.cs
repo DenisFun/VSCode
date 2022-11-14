@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 class Arrays
 {
 	static void Main()
@@ -7,10 +8,14 @@ class Arrays
 		int k = 6;
 		First_Method(array, k);
 		Second_Method(array, k);
+		Third_Method(array, k);
 	}
 
 	static void First_Method(int[] array, int k)
 	{
+		Console.Write("First_Method: ");
+		Console.WriteLine("\n");
+
 		for (int i = 0; i < array.Length; i++)
 		{
 			for (int j = i + 1; j < array.Length; j++)
@@ -29,6 +34,9 @@ class Arrays
 		Array.Sort(array);
 		int first = 0;
 		int last = array.Length - 1;
+
+		Console.Write("Second_Method: ");
+		Console.WriteLine("\n");
 
 		while (first < last)
 		{
@@ -50,6 +58,17 @@ class Arrays
 
 	static void Third_Method(int[] array, int k)
 	{
-			//третий метод
+		Console.Write("Third_Method: ");
+		Console.WriteLine("\n");
+
+		Hashtable hash = new Hashtable();
+		for (int i = 0; i < array.Length; i++)
+		{
+			if (hash.ContainsKey(k - array[i]))
+			{
+				Console.WriteLine($"[{k - array[i]}, {array[i]}]");
+			}
+			hash.Add(array[i], i);
+		}
 	}
 }
